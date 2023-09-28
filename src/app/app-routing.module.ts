@@ -2,10 +2,17 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { APP_BASE_HREF } from '@angular/common';
 import { LoginComponent } from '../views/login/login.component';
+import { EmptyRouteComponent } from "./empty-route/empty-route.component";
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'login', component: LoginComponent }
+  {
+    path: "",
+    children: [
+      { path: '', redirectTo: 'login', pathMatch: 'full' },
+      { path: 'login', component: LoginComponent },
+    ]
+  },
+  { path: '**', component: EmptyRouteComponent }
 ];
 
 @NgModule({
