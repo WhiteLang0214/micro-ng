@@ -31,7 +31,7 @@ export async function unmount(props: Object) {
   // @ts-ignore
   app.destroy();
 }
-console.log("angular------main-----", bootstrap);
+
 (window as any).bootstrap = bootstrap;
 (window as any).mount = mount;
 (window as any).unmount = unmount;

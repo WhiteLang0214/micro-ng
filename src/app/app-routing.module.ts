@@ -14,7 +14,7 @@ const routes: Routes = [
   providers: [
     {
       provide: APP_BASE_HREF,
-      useValue: "/microEmbpWeb" // 设置 history 模式路由的 base
+      useValue: "/microAngular" // 设置 history 模式路由的 base
     }
   ]
 })
