@@ -15,7 +15,7 @@
           "options": {
             "outputPath": "dist/micro-ng",
             "index": "src/index.html",
-            "main": "src/main.ts",
+            "main": "src/main.single-spa.ts",
             "polyfills": "src/polyfills.js",
             "tsConfig": "tsconfig.app.json",
             "assets": [
@@ -27,8 +27,11 @@
             ],
             "scripts": [],
             "customWebpackConfig": {
-              "path": "./custom-webpack.config.js"
-            }
+              "path": "extra-webpack.config.js",
+              "libraryName": "micro-ng",
+              "libraryTarget": "umd"
+            },
+            "deployUrl": "http://localhost:4100/"
           },
           "configurations": {
             "production": {
@@ -44,7 +47,7 @@
                   "maximumError": "4kb"
                 }
               ],
-              "outputHashing": "all"
+              "outputHashing": "none"
             },
             "development": {
               "buildOptimizer": false,
@@ -52,7 +55,8 @@
               "vendorChunk": true,
               "extractLicenses": false,
               "sourceMap": true,
-              "namedChunks": true
+              "namedChunks": true,
+              "outputHashing": "none"
             }
           },
           "defaultConfiguration": "production"

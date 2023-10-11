@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'micro-angular-root',
+  selector: 'app-root #micro-ng-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
